@@ -1,7 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <title>Code coverage report for node-npmtest-agenda-ui/agenda-ui/lib/store.js</title>
+<html lang="en"><head>
+    <title>Code coverage report for node-npmtest-agenda-ui/node_modules/agenda-ui/lib/store.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -194,7 +192,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-agenda-ui">npmtest-agenda-ui (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-agenda-ui/agenda-ui/lib/store.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-agenda-ui/node_modules/agenda-ui/lib/store.js</span></h1>
     <h2>
         
         Statements: <span class="metric">18.18% <small>(10 / 55)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -210,11 +208,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-agenda-ui/agenda-ui/lib/</a> &#187; store.js</div>
+    <div class="path"><a href="../../../../index.html">All files</a> » <a href="index.html">node-npmtest-agenda-ui/node_modules/agenda-ui/lib/</a> » store.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tr><td class="line-count">1
+<tbody><tr><td class="line-count">1
 2
 3
 4
@@ -427,113 +425,114 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">var RSVP = require('rsvp');
 var slug = require('speakingurl');
 &nbsp;
-var Store = module.exports = <span class="fstat-no" title="function not covered" >function (agenda) {</span>
-<span class="cstat-no" title="statement not covered" >  this.agenda = agenda;</span>
-<span class="cstat-no" title="statement not covered" >  this.db = agenda._db;</span>
+var Store = module.exports = <span class="fstat-no" title="function not covered">function (agenda) {</span>
+<span class="cstat-no" title="statement not covered">  this.agenda = agenda;</span>
+<span class="cstat-no" title="statement not covered">  this.db = agenda._db;</span>
 };
 &nbsp;
-Store.prototype.data = <span class="fstat-no" title="function not covered" >function (query) {</span>
-<span class="cstat-no" title="statement not covered" >  return RSVP.hash({</span>
+Store.prototype.data = <span class="fstat-no" title="function not covered">function (query) {</span>
+<span class="cstat-no" title="statement not covered">  return RSVP.hash({</span>
     jobs: this.jobs(query)
   , meta: this.meta()
   , definitions: this.definitions(query)
   });
 };
 &nbsp;
-Store.prototype.jobs = <span class="fstat-no" title="function not covered" >function (query) {</span>
-<span class="cstat-no" title="statement not covered" >  query = this.buildQuery(query);</span>
-<span class="cstat-no" title="statement not covered" >  var jobs = RSVP.denodeify(this.agenda.jobs.bind(this.agenda));</span>
-<span class="cstat-no" title="statement not covered" >  return jobs(query).then(<span class="fstat-no" title="function not covered" >function (results) {</span></span>
-<span class="cstat-no" title="statement not covered" >    return results.map(<span class="fstat-no" title="function not covered" >function (result) {</span></span>
-<span class="cstat-no" title="statement not covered" >      result.attrs.jobData = result.attrs.data;</span>
-<span class="cstat-no" title="statement not covered" >      delete result.attrs.data;</span>
-<span class="cstat-no" title="statement not covered" >      return result;</span>
+Store.prototype.jobs = <span class="fstat-no" title="function not covered">function (query) {</span>
+<span class="cstat-no" title="statement not covered">  query = this.buildQuery(query);</span>
+<span class="cstat-no" title="statement not covered">  var jobs = RSVP.denodeify(this.agenda.jobs.bind(this.agenda));</span>
+<span class="cstat-no" title="statement not covered">  return jobs(query).then(<span class="fstat-no" title="function not covered">function (results) {</span></span>
+<span class="cstat-no" title="statement not covered">    return results.map(<span class="fstat-no" title="function not covered">function (result) {</span></span>
+<span class="cstat-no" title="statement not covered">      result.attrs.jobData = result.attrs.data;</span>
+<span class="cstat-no" title="statement not covered">      delete result.attrs.data;</span>
+<span class="cstat-no" title="statement not covered">      return result;</span>
     });
   });
 };
 &nbsp;
-Store.prototype.meta = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >  var hash = {</span>
+Store.prototype.meta = <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">  var hash = {</span>
     total: this.count()
   , completed: this.count({filter: 'completed'})
   , future: this.count({filter: 'future'})
   , failed: this.count({filter: 'failed'})
   };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return RSVP.hash(hash);</span>
+<span class="cstat-no" title="statement not covered">  return RSVP.hash(hash);</span>
 };
 &nbsp;
-Store.prototype.count = <span class="fstat-no" title="function not covered" >function (options) {</span>
-<span class="cstat-no" title="statement not covered" >  var count = RSVP.denodeify(this.db.count.bind(this.db));</span>
-<span class="cstat-no" title="statement not covered" >  return count(this.buildQuery(options));</span>
+Store.prototype.count = <span class="fstat-no" title="function not covered">function (options) {</span>
+<span class="cstat-no" title="statement not covered">  var count = RSVP.denodeify(this.db.count.bind(this.db));</span>
+<span class="cstat-no" title="statement not covered">  return count(this.buildQuery(options));</span>
 };
 &nbsp;
-Store.prototype.buildQuery = <span class="fstat-no" title="function not covered" >function (queryParams) {</span>
-<span class="cstat-no" title="statement not covered" >  queryParams || (queryParams = {});</span>
-<span class="cstat-no" title="statement not covered" >  var query = {};</span>
-<span class="cstat-no" title="statement not covered" >  var filter = queryParams.filter;</span>
-<span class="cstat-no" title="statement not covered" >  var name = queryParams.name;</span>
+Store.prototype.buildQuery = <span class="fstat-no" title="function not covered">function (queryParams) {</span>
+<span class="cstat-no" title="statement not covered">  queryParams || (queryParams = {});</span>
+<span class="cstat-no" title="statement not covered">  var query = {};</span>
+<span class="cstat-no" title="statement not covered">  var filter = queryParams.filter;</span>
+<span class="cstat-no" title="statement not covered">  var name = queryParams.name;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (!filter || 'future' === filter) {</span>
-<span class="cstat-no" title="statement not covered" >    query.nextRunAt =  { $gte: new Date() };</span>
-  } else <span class="cstat-no" title="statement not covered" >if ('completed' === filter) {</span>
-<span class="cstat-no" title="statement not covered" >    query.lastFinishedAt =  { $exists: true };</span>
-<span class="cstat-no" title="statement not covered" >    query.type = 'normal';</span>
-  } else <span class="cstat-no" title="statement not covered" >if ('failed' === filter) {</span>
-<span class="cstat-no" title="statement not covered" >    query.failedAt =  { $exists: true };</span>
+<span class="cstat-no" title="statement not covered">  if (!filter || 'future' === filter) {</span>
+<span class="cstat-no" title="statement not covered">    query.nextRunAt =  { $gte: new Date() };</span>
+  } else <span class="cstat-no" title="statement not covered">if ('completed' === filter) {</span>
+<span class="cstat-no" title="statement not covered">    query.lastFinishedAt =  { $exists: true };</span>
+<span class="cstat-no" title="statement not covered">    query.type = 'normal';</span>
+  } else <span class="cstat-no" title="statement not covered">if ('failed' === filter) {</span>
+<span class="cstat-no" title="statement not covered">    query.failedAt =  { $exists: true };</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (name &amp;&amp; 'All' !== name) {</span>
-<span class="cstat-no" title="statement not covered" >    query.name = name;</span>
+<span class="cstat-no" title="statement not covered">  if (name &amp;&amp; 'All' !== name) {</span>
+<span class="cstat-no" title="statement not covered">    query.name = name;</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return query;</span>
+<span class="cstat-no" title="statement not covered">  return query;</span>
 };
 &nbsp;
-Store.prototype.definitions = <span class="fstat-no" title="function not covered" >function (query) {</span>
-<span class="cstat-no" title="statement not covered" >  query || (query = {});</span>
-<span class="cstat-no" title="statement not covered" >  var hash = { all: this.count({filter: query.filter}) };</span>
-<span class="cstat-no" title="statement not covered" >  var indexMap = {};</span>
-<span class="cstat-no" title="statement not covered" >  var objects = this.definitionObjects();</span>
+Store.prototype.definitions = <span class="fstat-no" title="function not covered">function (query) {</span>
+<span class="cstat-no" title="statement not covered">  query || (query = {});</span>
+<span class="cstat-no" title="statement not covered">  var hash = { all: this.count({filter: query.filter}) };</span>
+<span class="cstat-no" title="statement not covered">  var indexMap = {};</span>
+<span class="cstat-no" title="statement not covered">  var objects = this.definitionObjects();</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  objects.forEach(<span class="fstat-no" title="function not covered" >function (definition) {</span></span>
-<span class="cstat-no" title="statement not covered" >    indexMap[definition._id] = objects.indexOf(definition);</span>
-<span class="cstat-no" title="statement not covered" >    hash[definition._id] = this.count({name: definition.name, filter: query.filter});</span>
+<span class="cstat-no" title="statement not covered">  objects.forEach(<span class="fstat-no" title="function not covered">function (definition) {</span></span>
+<span class="cstat-no" title="statement not covered">    indexMap[definition._id] = objects.indexOf(definition);</span>
+<span class="cstat-no" title="statement not covered">    hash[definition._id] = this.count({name: definition.name, filter: query.filter});</span>
   }, this);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return RSVP.hash(hash).then(<span class="fstat-no" title="function not covered" >function (counts) {</span></span>
-<span class="cstat-no" title="statement not covered" >    return Object.keys(counts).map(<span class="fstat-no" title="function not covered" >function (id) {</span></span>
-<span class="cstat-no" title="statement not covered" >      var object = objects[indexMap[id]];</span>
-<span class="cstat-no" title="statement not covered" >      object.count = counts[id];</span>
-<span class="cstat-no" title="statement not covered" >      return object;</span>
+<span class="cstat-no" title="statement not covered">  return RSVP.hash(hash).then(<span class="fstat-no" title="function not covered">function (counts) {</span></span>
+<span class="cstat-no" title="statement not covered">    return Object.keys(counts).map(<span class="fstat-no" title="function not covered">function (id) {</span></span>
+<span class="cstat-no" title="statement not covered">      var object = objects[indexMap[id]];</span>
+<span class="cstat-no" title="statement not covered">      object.count = counts[id];</span>
+<span class="cstat-no" title="statement not covered">      return object;</span>
     });
   });
 };
 &nbsp;
-Store.prototype.definitionObjects = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >  var objects = Object.keys(this.agenda._definitions).map(<span class="fstat-no" title="function not covered" >function (d) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var id = slug(d);</span>
-<span class="cstat-no" title="statement not covered" >    return {</span>
+Store.prototype.definitionObjects = <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">  var objects = Object.keys(this.agenda._definitions).map(<span class="fstat-no" title="function not covered">function (d) {</span></span>
+<span class="cstat-no" title="statement not covered">    var id = slug(d);</span>
+<span class="cstat-no" title="statement not covered">    return {</span>
       _id: id
     , name: d
     , sortValue: 0
     };
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  objects.push({</span>
+<span class="cstat-no" title="statement not covered">  objects.push({</span>
     _id: 'all'
   , name: 'All'
   , sortValue: -1
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return objects;</span>
+<span class="cstat-no" title="statement not covered">  return objects;</span>
 };
 &nbsp;
 &nbsp;</pre></td></tr>
-</table></pre>
+</tbody></table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 18:31:06 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Wed Apr 19 2017 06:07:51 GMT+0000 (UTC)</div>
 </div>
-</body>
-</html>
+
+
+</body></html>
