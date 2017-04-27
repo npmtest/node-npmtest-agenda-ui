@@ -1,6 +1,6 @@
 # npmtest-agenda-ui
 
-#### test coverage for  [agenda-ui (v0.0.7)](https://github.com/moudy/agenda-ui)  [![npm package](https://img.shields.io/npm/v/npmtest-agenda-ui.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-agenda-ui) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-agenda-ui.svg)](https://travis-ci.org/npmtest/node-npmtest-agenda-ui)
+#### basic test coverage for  [agenda-ui (v0.0.7)](https://github.com/moudy/agenda-ui)  [![npm package](https://img.shields.io/npm/v/npmtest-agenda-ui.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-agenda-ui) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-agenda-ui.svg)](https://travis-ci.org/npmtest/node-npmtest-agenda-ui)
 
 #### UI for Agenda
 
@@ -10,7 +10,7 @@
 |--:|:--|
 | coverage : | [![istanbul-coverage](https://npmtest.github.io/node-npmtest-agenda-ui/build/coverage.badge.svg)](https://npmtest.github.io/node-npmtest-agenda-ui/build/coverage.html/index.html)|
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-agenda-ui/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-agenda-ui/build/test-report.html)|
-| build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-agenda-ui/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-agenda-ui/tree/gh-pages/build)|
+| test-server-github : | [![github.com test-server](https://npmtest.github.io/node-npmtest-agenda-ui/GitHub-Mark-32px.png)](https://npmtest.github.io/node-npmtest-agenda-ui/build/app/index.html) | | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-agenda-ui/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-agenda-ui/tree/gh-pages/build)|
 
 - [https://npmtest.github.io/node-npmtest-agenda-ui/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-agenda-ui/build/coverage.html/index.html)
 
@@ -98,7 +98,8 @@
         "prepublish": "./scripts/build",
         "test": "mocha"
     },
-    "version": "0.0.7"
+    "version": "0.0.7",
+    "bin": {}
 }
 ```
 
